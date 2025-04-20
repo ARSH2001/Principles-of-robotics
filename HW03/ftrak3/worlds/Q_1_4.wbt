@@ -1,0 +1,133 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2601979545510628 0.2261029811391667 0.9387089359154009 1.7731148434973518
+  position 0.44768047354150436 -1.9211425516440477 1.432957532303297
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0 0.025
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+      }
+      device [
+        RotationalMotor {
+          name "R1"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.125
+        children [
+          Solid {
+            translation 0 0 0.125
+            rotation 0 1 0 1.57
+            children [
+              SliderJoint {
+                device [
+                  LinearMotor {
+                    name "L1"
+                    maxPosition 0.5
+                  }
+                  PositionSensor {
+                  }
+                ]
+                endPoint Solid {
+                  children [
+                    HingeJoint {
+                      device [
+                        PositionSensor {
+                        }
+                        RotationalMotor {
+                          name "R2"
+                        }
+                      ]
+                      endPoint Solid {
+                        translation 0 0 0.5
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0 0
+                              }
+                            }
+                            geometry Sphere {
+                              radius 0.1
+                            }
+                          }
+                        ]
+                        name "Black"
+                        physics Physics {
+                          mass 5
+                        }
+                      }
+                    }
+                    Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0.666667 0 0
+                        }
+                      }
+                      geometry Cylinder {
+                        height 1
+                        radius 0.01
+                      }
+                    }
+                  ]
+                  name "Red"
+                }
+              }
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0 0 1
+                  }
+                }
+                geometry Cylinder {
+                  height 0.5
+                  radius 0.05
+                }
+              }
+            ]
+            name "Blue"
+          }
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.694118 0.8 0.223529
+              }
+            }
+            geometry Cylinder {
+              height 0.25
+              radius 0.05
+            }
+          }
+        ]
+        name "Green"
+      }
+    }
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.603922 0.505882 0.8
+        }
+      }
+      geometry Cylinder {
+        height 0.05
+        radius 0.25
+      }
+    }
+  ]
+  name "Base"
+  controller "my_controller"
+  controllerArgs [
+    ""
+  ]
+}

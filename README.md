@@ -1,4 +1,4 @@
-# Principles of Robotics - Spring 1401 🚀
+# Principles of Robotics - Spring 2022 🚀
 
 [![Made With](https://img.shields.io/badge/Made%20with-Python%2C%20Webots-blue)]()
 [![University](https://img.shields.io/badge/University-IUT-orange)]()
